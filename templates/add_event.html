@@ -1,0 +1,15 @@
+{% extends "base.html" %}{% block content %}
+<div class="row justify-content-center"><div class="col-lg-7">
+<div class="card shadow-sm"><div class="card-body p-4">
+<h3>Add Security Event</h3><p class="text-secondary">The detector analyzes the event and records it in the blockchain.</p>
+<form method="post">
+<label class="form-label">Event Type</label>
+<select name="event_type" class="form-select mb-3">
+<option>Normal Login</option><option>Failed Login</option><option>Web Request</option>
+<option>Network</option><option>Unknown IP</option>
+</select>
+<label class="form-label">IP Address</label><input name="ip" class="form-control mb-3" value="192.168.1.20">
+<label class="form-label">Details</label><textarea name="details" class="form-control mb-3" rows="4" placeholder="Example: 7 failed login attempts"></textarea>
+<button class="btn btn-primary">Analyze & Add to Blockchain</button>
+</form></div></div></div></div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block content %}
+<div class="card shadow-sm"><div class="card-body p-4">
+<h2>{% if result.threat=="YES" %}⚠ Threat Detected{% else %}✓ Event Safe{% endif %}</h2>
+<div class="alert {% if result.threat=="YES" %}alert-danger{% else %}alert-success{% endif %}">
+<strong>{{result.status}}</strong><br>Severity: {{result.severity}}
+</div>
+<p>Event has been stored in <strong>Block #{{block.index}}</strong>.</p>
+<p class="small text-break">Hash: {{block.hash}}</p>
+<a href="/" class="btn btn-dark">Back to Dashboard</a>
+<a href="/blockchain" class="btn btn-outline-dark">View Blockchain</a>
+</div></div>
+{% endblock %}
